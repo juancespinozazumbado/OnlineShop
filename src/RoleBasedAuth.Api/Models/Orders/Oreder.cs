@@ -2,11 +2,11 @@
 
 namespace RoleBasedAuth.Api.Models.Orders;
 
-public class Oreder
+public class Order
 {
     public Guid Id { get; set; }    
     public string OrderNumber { get; set; } = string.Empty; 
-    public string? CustomerId { get; set; } 
+    public Guid? CustomerId { get; set; } 
     public Customer? Customer { get; set; }
     public List<OrderDetail>? Details { get; set; }
 
@@ -21,12 +21,15 @@ public class Oreder
 public class OrderDetail
 {
     public Guid Id { get; set; }
-    public string? ProductId { get; set; }
+    public Guid? ProductId { get; set; }
     public Product? Product { get; set; }
     public int QuantitySale { get; set; }   
     public decimal PriceSale { get; set; }
     public decimal PriceDiscount { get; set; }
     public decimal Total { get; set; }
+
+    public Guid? OrderId { get; set; }  
+    public Order? Order { get; set; }    
 
 
 }
@@ -39,6 +42,8 @@ public class Customer
     public string? Phone { get; set; }
     public string? PostalCode { get; set; }
     public string? Country { get; set; }
+
+    public List<Order> Orders { get; set; } = new();    
 
 
 }
