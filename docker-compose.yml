@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  rolebasedauth.api:
+    image: ${DOCKER_REGISTRY-}rolebasedauthapi
+    build:
+      context: .
+      dockerfile: src/RoleBasedAuth.Api/Dockerfile
+
+  webclient:
+    image: ${DOCKER_REGISTRY-}webclient
+    build:
+      context: .
+      dockerfile: src/WebClient/Dockerfile
+    depends_on: 
+       - "rolebasedauth.api"
+  SqlServer:
+    image: mcr.microsoft.com/azure-sql-edge
+    ports:
+      - "1433:1433"
+    environment:
+      - SA_PASSWORD=@OdiN.7072$
+      - ACCEPT_EULA=Y
+

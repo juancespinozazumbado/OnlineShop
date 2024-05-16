@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  rolebasedauth.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    #   - ASPNETCORE_URLS=https://+:443;http://+:80
+    # ports:
+    #   - "80"
+    #   - "443"
+      - ASPNETCORE_URLS=http://+:8080
+    ports:
+       - "5106:8080"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  webclient:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    #   - ASPNETCORE_URLS=https://+:443;http://+:80
+    # ports:
+    #   - "80"
+    #   - "443"
+      - ASPNETCORE_URLS=http://+:8080
+    ports:
+       - "5200:8080"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
