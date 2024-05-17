@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using RoleBasedAuth.Api.Config;
 using System.Text;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +48,8 @@ builder.Services.AddAuthentication(options =>
      });
 
 builder.Services.AddRepository();
+
+builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 
 builder.Services.AddAutneticatorServices();
 

@@ -1,7 +1,9 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using RoleBasedAuth.Api.Controllers.Auth;
+using RoleBasedAuth.Api.Dtos.Products;
 using RoleBasedAuth.Api.Interfaces;
 using RoleBasedAuth.Api.Models.Products;
 
@@ -14,11 +16,14 @@ public class ProductsController : ControllerBase
 
     private readonly IRepository<Product> _repository;
     private readonly ILogger<ProductsController> _logger;
+    private readonly IMapper _maper;
 
-    public ProductsController(ILogger<ProductsController> logger, IRepository<Product> repo)
+    public ProductsController(ILogger<ProductsController> logger, 
+        IRepository<Product> repo, IMapper mapper)
     {
         _repository = repo;
         _logger = logger;
+        _maper = mapper;
     }
 
     [HttpGet("")]
@@ -68,12 +73,13 @@ public class ProductsController : ControllerBase
 
     [RoleAuthFilter("Admin")]
     [HttpPut("")]
-    public async Task<IActionResult> Update(Product product)
+    public async Task<IActionResult> Update(ProductDto product)
     {
 
         try
         {
-            await _repository.UpdateAsync(product);
+            var entity = _maper.Map<Product>(product);
+            await _repository.UpdateAsync(entity);
             return Ok(new { Message = $"Product {product.Id} Updated!" });
 
         }
