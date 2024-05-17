@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using RoleBasedAuth.Api.Dependencies;
 using RoleBasedAuth.Api.Models.Auth;
 using RoleBasedAuth.Api.Models.Orders;
 using RoleBasedAuth.Api.Models.Products;
@@ -31,6 +32,8 @@ public class RoleBaedDbContext : IdentityDbContext<User>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+
+        builder.ConfigureAuthbasic();
 
         builder.Entity<Product>()
             .HasOne(p => p.Category)

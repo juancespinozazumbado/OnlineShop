@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using RoleBasedAuth.Api.Controllers.Auth;
 using RoleBasedAuth.Api.Interfaces;
 using RoleBasedAuth.Api.Models.Products;
 
@@ -45,7 +46,7 @@ public class ProductsController : ControllerBase
     }
 
 
-
+    [RoleAuthFilter("Admin")]
     [HttpPost("add")]
     public async Task<IActionResult> Create(Product product)
     {

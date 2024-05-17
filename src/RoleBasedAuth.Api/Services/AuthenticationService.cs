@@ -40,7 +40,7 @@ public class AuthenticationService : IAuthenticatorService
                         UserName = user.UserName,
                         Email = user.Email,
                     },
-                    Token = _tokenProvider.WriteToken(user)
+                    Token = await _tokenProvider.WriteToken(user)
 
                 };
 
