@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "7994e403-a825-4d68-b106-88bf344cff2b",
+		"name": "RoleBasedAuth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33650790"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"Odin@gmail.com\",\r\n  \"password\": \"OdiN.22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5106/Autentication/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Odin@gmail.com\",\r\n  \"email\": \"odin@gmail.com\",\r\n  \"password\": \"OdiN.22\",\r\n  \"passwordConfirm\": \"OdiN.22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5106/Autentication/Register"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5106/api/v1/Products"
+					},
+					"response": []
+				},
+				{
+					"name": "ListById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHNob3AuY29tIiwic3ViIjoiNDNhNmM3MTItMDk1NC00MmM1LThmYmEtM2VlZWJjZjJmOWMyIiwibmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzE1OTY4ODk1LCJleHAiOjE3MTY1NzM2OTUsImlhdCI6MTcxNTk2ODg5NSwiaXNzIjoiT25saW5lLVNob3AiLCJhdWQiOiJPbmxpbmVTaG9wLUNsaWVudCJ9.cxDL3YFB4q8W8UdJM9uUap_1rvc4F2t8vMMSNw_ZPqA"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5106/api/v1/Products/5505a181-e0c8-45a0-7827-08dc76a35550"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHNob3AuY29tIiwic3ViIjoiNDNhNmM3MTItMDk1NC00MmM1LThmYmEtM2VlZWJjZjJmOWMyIiwibmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzE1OTY4ODk1LCJleHAiOjE3MTY1NzM2OTUsImlhdCI6MTcxNTk2ODg5NSwiaXNzIjoiT25saW5lLVNob3AiLCJhdWQiOiJPbmxpbmVTaG9wLUNsaWVudCJ9.cxDL3YFB4q8W8UdJM9uUap_1rvc4F2t8vMMSNw_ZPqA"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Pilse 6.0\",\r\n  \"description\": \"Birra\",\r\n  \"quantity\": 5,\r\n  \"price\": 1100,\r\n  \"priceDiscount\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5106/Products/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHNob3AuY29tIiwic3ViIjoiNDNhNmM3MTItMDk1NC00MmM1LThmYmEtM2VlZWJjZjJmOWMyIiwibmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzE1OTY4ODk1LCJleHAiOjE3MTY1NzM2OTUsImlhdCI6MTcxNTk2ODg5NSwiaXNzIjoiT25saW5lLVNob3AiLCJhdWQiOiJPbmxpbmVTaG9wLUNsaWVudCJ9.cxDL3YFB4q8W8UdJM9uUap_1rvc4F2t8vMMSNw_ZPqA"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Pilse 6.0\",\r\n  \"description\": \"Birra\",\r\n  \"quantity\": 5,\r\n  \"price\": 1100,\r\n  \"priceDiscount\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5106/api/v1/Products"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQHNob3AuY29tIiwic3ViIjoiNDNhNmM3MTItMDk1NC00MmM1LThmYmEtM2VlZWJjZjJmOWMyIiwibmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluIiwibmJmIjoxNzE1OTY4ODk1LCJleHAiOjE3MTY1NzM2OTUsImlhdCI6MTcxNTk2ODg5NSwiaXNzIjoiT25saW5lLVNob3AiLCJhdWQiOiJPbmxpbmVTaG9wLUNsaWVudCJ9.cxDL3YFB4q8W8UdJM9uUap_1rvc4F2t8vMMSNw_ZPqA"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": \"5505a181-e0c8-45a0-7827-08dc76a35550\",\r\n        \"name\": \"Pilsen\",\r\n        \"description\": \"Birra\",\r\n        \"quantity\": 9,\r\n        \"price\": 1200.00,\r\n        \"priceDiscount\": 0.00\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5106/api/v1/Products/"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

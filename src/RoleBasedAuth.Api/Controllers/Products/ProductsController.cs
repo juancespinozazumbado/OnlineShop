@@ -8,7 +8,7 @@ using RoleBasedAuth.Api.Models.Products;
 namespace RoleBasedAuth.Api.Controllers.Products;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/v1/[controller]")]
 public class ProductsController : ControllerBase
 {
 
@@ -38,7 +38,7 @@ public class ProductsController : ControllerBase
        
     }
     [Authorize]
-    [HttpGet("/{id}")]
+    [HttpGet("{id}")]
     public async Task<ActionResult<Product>> GetById( Guid id)
     {
         var product = await _repository.GetByIdAsync(id);
@@ -47,7 +47,7 @@ public class ProductsController : ControllerBase
 
 
     [RoleAuthFilter("Admin")]
-    [HttpPost("add")]
+    [HttpPost("")]
     public async Task<IActionResult> Create(Product product)
     {
 
@@ -55,6 +55,46 @@ public class ProductsController : ControllerBase
         {
              await _repository.CreateAsync(product);
             return Ok(new {Message = $"Product {product.Id} created!"});
+
+        }
+        catch (Exception ex)
+        {
+            return Problem(ex.Message);
+
+        }
+
+    }
+
+
+    [RoleAuthFilter("Admin")]
+    [HttpPut("")]
+    public async Task<IActionResult> Update(Product product)
+    {
+
+        try
+        {
+            await _repository.UpdateAsync(product);
+            return Ok(new { Message = $"Product {product.Id} Updated!" });
+
+        }
+        catch (Exception ex)
+        {
+            return Problem(ex.Message);
+
+        }
+
+    }
+
+
+    [RoleAuthFilter("Admin")]
+    [HttpDelete("")]
+    public async Task<IActionResult> Delete(Product product)
+    {
+
+        try
+        {
+            await _repository.DeleteAsync(product);
+            return Ok(new { Message = $"Product {product.Id} Deleted!" });
 
         }
         catch (Exception ex)
