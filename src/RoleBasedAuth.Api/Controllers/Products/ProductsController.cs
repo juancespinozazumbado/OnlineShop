@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using RoleBasedAuth.Api.Interfaces;
@@ -19,7 +20,7 @@ public class ProductsController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
+    [HttpGet("")]
     public async Task<ActionResult<IEnumerable<Product>>> Get()
     {
         try
@@ -35,6 +36,15 @@ public class ProductsController : ControllerBase
         }
        
     }
+    [Authorize]
+    [HttpGet("/{id}")]
+    public async Task<ActionResult<Product>> GetById( Guid id)
+    {
+        var product = await _repository.GetByIdAsync(id);
+        return product is not null ? Ok(product) : NotFound();
+    }
+
+
 
     [HttpPost("add")]
     public async Task<IActionResult> Create(Product product)
