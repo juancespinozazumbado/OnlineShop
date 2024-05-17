@@ -36,7 +36,7 @@ public class ProductsController : ControllerBase
         }
        
     }
-    [Authorize/]
+    [Authorize]
     [HttpGet("/{id}")]
     public async Task<ActionResult<Product>> GetById( Guid id)
     {
