@@ -1,6 +1,6 @@
 ﻿using RoleBasedAuth.Api.Models.Products;
 
-namespace RoleBasedAuth.Api.DTOS;
+namespace RoleBasedAuth.Api.Dtos;
 
 public class ProductDto
 {

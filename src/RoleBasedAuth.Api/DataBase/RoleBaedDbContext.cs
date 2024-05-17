@@ -14,7 +14,6 @@ public class RoleBaedDbContext : IdentityDbContext<User>
 
     }
 
-
     //Here we define all our DbSets of the models
 
     public DbSet<Product> Products {get; set;}

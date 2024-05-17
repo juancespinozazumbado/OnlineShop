@@ -11,7 +11,9 @@ public class Product
     public decimal Price { get; set; } = 0M;
     public decimal PriceDiscount { get; set; } = 0M;
 
+    [JsonIgnore]
     public Guid? CategoryId { get; set; }
+    [JsonIgnore]
     public ProductCategory? Category { get; set; }
 }
 

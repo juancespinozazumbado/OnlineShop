@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: src/RoleBasedAuth.Api/Dockerfile
+    depends_on: 
+       - "SqlServer"
 
   webclient:
     image: ${DOCKER_REGISTRY-}webclient
@@ -14,6 +16,7 @@ services:
       dockerfile: src/WebClient/Dockerfile
     depends_on: 
        - "rolebasedauth.api"
+
   SqlServer:
     image: mcr.microsoft.com/azure-sql-edge
     ports:
