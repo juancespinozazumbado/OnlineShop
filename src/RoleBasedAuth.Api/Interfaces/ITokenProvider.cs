@@ -4,7 +4,7 @@ namespace RoleBasedAuth.Api.Interfaces;
 
 public interface ITokenProvider
 {
-   
-    string WriteToken(User user);
+
+    public Task<string> WriteToken(User user);
 }
 

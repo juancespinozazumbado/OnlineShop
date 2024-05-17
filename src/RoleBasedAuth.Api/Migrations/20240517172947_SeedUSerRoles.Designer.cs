@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RoleBasedAuth.Api.contexts;
 
@@ -11,9 +12,11 @@ using RoleBasedAuth.Api.contexts;
 namespace RoleBasedAuth.Api.Migrations
 {
     [DbContext(typeof(RoleBaedDbContext))]
-    partial class RoleBaedDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240517172947_SeedUSerRoles")]
+    partial class SeedUSerRoles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

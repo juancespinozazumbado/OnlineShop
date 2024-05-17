@@ -27,7 +27,7 @@ public class TokenProvider : ITokenProvider
         _roleManager = roleManager;
     }   
 
-    public string WriteToken(User user)
+    public async Task<string> WriteToken(User user)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(_jwtOptions.Secret);
@@ -38,6 +38,9 @@ public class TokenProvider : ITokenProvider
             new Claim(JwtRegisteredClaimNames.Sub,user.Id),
             new Claim(JwtRegisteredClaimNames.Name,user.UserName)
         };
+
+        var userRoles = await _userManager.GetRolesAsync(user);
+        claimList.AddRange(userRoles.Select(role => new Claim(ClaimTypes.Role, role)));
 
         var tokenDescriptor = new SecurityTokenDescriptor
         {
