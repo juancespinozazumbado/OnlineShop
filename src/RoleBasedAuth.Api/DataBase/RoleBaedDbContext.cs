@@ -4,6 +4,7 @@ using RoleBasedAuth.Api.Dependencies;
 using RoleBasedAuth.Api.Models.Auth;
 using RoleBasedAuth.Api.Models.Orders;
 using RoleBasedAuth.Api.Models.Products;
+using System.Reflection;
 
 namespace RoleBasedAuth.Api.contexts;
 
@@ -35,31 +36,10 @@ public class RoleBaedDbContext : IdentityDbContext<User>
 
         builder.ConfigureAuthbasic();
 
-        builder.Entity<Product>()
-            .HasOne(p => p.Category)
-            .WithMany(c=> c.Products).HasForeignKey(P => P.CategoryId)
-            .HasPrincipalKey( p => p.Id);
+        builder.SetUpDomainContext();
 
-        builder.Entity<Order>()
-            .HasMany(o => o.Details)
-            .WithOne(od => od.Order)
-            .HasForeignKey(o => o.OrderId)
-            .HasPrincipalKey(od => od.Id);
+        //builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-        builder.Entity<Order>()
-            .HasOne(o => o.Customer)
-            .WithMany(c => c.Orders)
-            .HasForeignKey(o => o.CustomerId);
-
-        builder.Entity<Customer>()
-            .HasMany(c => c.Orders)
-            .WithOne(o => o.Customer)
-            .HasForeignKey(o => o.CustomerId);
-
-
-        builder.Entity<OrderDetail>()
-            .HasOne(d => d.Product);
-            
 
 
 

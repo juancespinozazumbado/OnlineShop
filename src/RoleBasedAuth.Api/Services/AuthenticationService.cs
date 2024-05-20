@@ -82,7 +82,7 @@ public class AuthenticationService : IAuthenticatorService
         }
         else return new
         {
-            Meassage = "User Cant register!"
+            Errors = reuslt.Errors
         };
     }
 
