@@ -15,7 +15,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 //Add EF Core
-var connectionString = builder.Configuration.GetConnectionString("Local-docker");
+#if DEBUG
+var connectionString = builder.Configuration.GetConnectionString("DebugConnectionString");
+
+#else
+
+ var connectionString = builder.Configuration.GetConnectionString("ProdConnectionString");
+
+#endif
 builder.Services.AddDbContext<RoleBaedDbContext>(options =>
   options.UseSqlServer(connectionString));
 
