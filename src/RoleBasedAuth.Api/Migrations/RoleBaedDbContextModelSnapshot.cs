@@ -152,7 +152,7 @@ namespace RoleBasedAuth.Api.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "43a6c712-0954-42c5-8fba-3eeebcf2f9c2",
+                            UserId = "b382147f-d059-40fb-967c-5541f6980493",
                             RoleId = "10001"
                         });
                 });
@@ -243,17 +243,17 @@ namespace RoleBasedAuth.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "43a6c712-0954-42c5-8fba-3eeebcf2f9c2",
+                            Id = "b382147f-d059-40fb-967c-5541f6980493",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "31e3cee2-b4a7-4b2c-bd01-05553f6145f9",
+                            ConcurrencyStamp = "879f8598-1736-4592-b4d2-588f441b580a",
                             Email = "admin@shop.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@SHOP.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHI16NaSRasTmxdqpappVuRopkFgpsJrukpHC2Kc7dZHUmOyg3u28Zl0zogqJikSxA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENowmkb5QiKpYeo6pXCrBg6vDUQapojcYNbfyXbqpGX5y6Iw9z4qEjfrkmyJKNzoKw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d8b87b1c-dfd5-476d-89c8-66a2c876392e",
+                            SecurityStamp = "2ed9fe47-d429-45c9-92be-c853dd90ae65",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
@@ -381,6 +381,58 @@ namespace RoleBasedAuth.Api.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("e69dfe99-3638-47c3-af52-74e830afc7ee"),
+                            CategoryId = new Guid("3ba4f677-9f95-4b4c-a086-7fc3d5ce52c8"),
+                            Description = "Este producto es distibuido por la Coca-Cola Company",
+                            Name = "Coca Cola 0 1.75L",
+                            Price = 1200m,
+                            PriceDiscount = 0m,
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = new Guid("a26fb722-27dd-4e74-9b56-5268699c94f6"),
+                            CategoryId = new Guid("3ba4f677-9f95-4b4c-a086-7fc3d5ce52c8"),
+                            Description = "Este producto es distibuido por la Coca-Cola Company",
+                            Name = "Coca Cola 0 2.5L",
+                            Price = 1200m,
+                            PriceDiscount = 0m,
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = new Guid("3ed61818-b22a-477a-97e9-99bd31c00434"),
+                            CategoryId = new Guid("3ba4f677-9f95-4b4c-a086-7fc3d5ce52c8"),
+                            Description = "Este producto es distibuido por la Coca-Cola Company",
+                            Name = "Fanta Naranja 650 ML",
+                            Price = 1200m,
+                            PriceDiscount = 0m,
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = new Guid("65151d61-0f7b-455e-bfab-39b57d9cf74d"),
+                            CategoryId = new Guid("f9b4233c-9db5-46d6-9894-0a39d7106e01"),
+                            Description = "Este producto es distibuido por la Pilsen",
+                            Name = "Pilsen 6.0 0 de 600 ML",
+                            Price = 1300m,
+                            PriceDiscount = 0m,
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = new Guid("a7ec9116-4608-400d-9c4b-443e06956038"),
+                            CategoryId = new Guid("f9b4233c-9db5-46d6-9894-0a39d7106e01"),
+                            Description = "Este producto es distibuido por Cerveseria",
+                            Name = "Imperial Ligth 600 ML",
+                            Price = 1200m,
+                            PriceDiscount = 0m,
+                            Quantity = 100
+                        });
                 });
 
             modelBuilder.Entity("RoleBasedAuth.Api.Models.Products.ProductCategory", b =>
@@ -399,6 +451,32 @@ namespace RoleBasedAuth.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3ba4f677-9f95-4b4c-a086-7fc3d5ce52c8"),
+                            Description = "Refrescos",
+                            Name = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("f9b4233c-9db5-46d6-9894-0a39d7106e01"),
+                            Description = "Birras",
+                            Name = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("babbca90-8195-4f38-ac73-ab72801be235"),
+                            Description = "Copteles",
+                            Name = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("ceca76aa-baf9-452b-bba3-c018087b3549"),
+                            Description = "Platos",
+                            Name = ""
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

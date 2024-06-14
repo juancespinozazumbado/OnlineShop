@@ -35,8 +35,11 @@ public class RoleBaedDbContext : IdentityDbContext<User>
         base.OnModelCreating(builder);
 
         builder.ConfigureAuthbasic();
+        
 
         builder.SetUpDomainContext();
+
+        builder.SeedProducts();
 
         //builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 

@@ -10,9 +10,8 @@ public static class ProductsDataConfig
     {
         builder.Entity<Product>()
        .HasOne(p => p.Category)
-       .WithMany(c => c.Products).HasForeignKey(P => P.CategoryId)
-       .HasPrincipalKey(p => p.Id);
-
+       .WithMany(c => c.Products).HasForeignKey(P => P.CategoryId);
+      
         builder.Entity<Order>()
             .HasMany(o => o.Details)
             .WithOne(od => od.Order)
