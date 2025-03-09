@@ -1,6 +1,5 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using RoleBasedAuth.Api.Controllers.Auth;
 using RoleBasedAuth.Api.Dtos.Products;
