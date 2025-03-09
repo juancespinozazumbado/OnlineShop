@@ -1,6 +1,4 @@
-﻿using Azure.Core;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Identity.Client;
+﻿using Microsoft.AspNetCore.Identity;
 using RoleBasedAuth.Api.Dtos.Auth;
 using RoleBasedAuth.Api.Interfaces;
 using RoleBasedAuth.Api.Models.Auth;

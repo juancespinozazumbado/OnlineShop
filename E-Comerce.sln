@@ -5,15 +5,15 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D221D863-BEA1-4477-8525-9E091509766D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoleBasedAuth.Api", "src\RoleBasedAuth.Api\RoleBasedAuth.Api.csproj", "{26156220-F9AF-4262-9C66-30013C90EA8A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{7637AEC6-276B-400F-8BFD-60E44BE9B8DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoleBasedAuth.Test", "tests\RoleBasedAuth.Test\RoleBasedAuth.Test.csproj", "{12E68A57-E1E1-4308-B1EC-D15797B390F1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "src\WebClient\WebClient.csproj", "{788EAF5B-E417-4349-A8DD-7BC198C9B10B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecomerse.core.tets", "tests\RoleBasedAuth.Test\Ecomerse.core.tets.csproj", "{12E68A57-E1E1-4308-B1EC-D15797B390F1}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A89A4DEA-528F-40D3-81D0-96BCD43E3D38}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecomerse.WebPortal", "src\WebClient\Ecomerse.WebPortal.csproj", "{3F938D24-C872-4EBB-AA38-2FEE6E873E62}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecomerse.PublicApi", "src\BaseService\Ecomerse.PublicApi.csproj", "{1A7397D1-CD28-4C48-956D-1057644E2FF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,30 +21,30 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{26156220-F9AF-4262-9C66-30013C90EA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26156220-F9AF-4262-9C66-30013C90EA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26156220-F9AF-4262-9C66-30013C90EA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26156220-F9AF-4262-9C66-30013C90EA8A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{12E68A57-E1E1-4308-B1EC-D15797B390F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{12E68A57-E1E1-4308-B1EC-D15797B390F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12E68A57-E1E1-4308-B1EC-D15797B390F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12E68A57-E1E1-4308-B1EC-D15797B390F1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{788EAF5B-E417-4349-A8DD-7BC198C9B10B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{788EAF5B-E417-4349-A8DD-7BC198C9B10B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{788EAF5B-E417-4349-A8DD-7BC198C9B10B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{788EAF5B-E417-4349-A8DD-7BC198C9B10B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A89A4DEA-528F-40D3-81D0-96BCD43E3D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A89A4DEA-528F-40D3-81D0-96BCD43E3D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A89A4DEA-528F-40D3-81D0-96BCD43E3D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A89A4DEA-528F-40D3-81D0-96BCD43E3D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F938D24-C872-4EBB-AA38-2FEE6E873E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F938D24-C872-4EBB-AA38-2FEE6E873E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F938D24-C872-4EBB-AA38-2FEE6E873E62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F938D24-C872-4EBB-AA38-2FEE6E873E62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A7397D1-CD28-4C48-956D-1057644E2FF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A7397D1-CD28-4C48-956D-1057644E2FF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A7397D1-CD28-4C48-956D-1057644E2FF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A7397D1-CD28-4C48-956D-1057644E2FF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{26156220-F9AF-4262-9C66-30013C90EA8A} = {D221D863-BEA1-4477-8525-9E091509766D}
 		{12E68A57-E1E1-4308-B1EC-D15797B390F1} = {7637AEC6-276B-400F-8BFD-60E44BE9B8DE}
-		{788EAF5B-E417-4349-A8DD-7BC198C9B10B} = {D221D863-BEA1-4477-8525-9E091509766D}
+		{3F938D24-C872-4EBB-AA38-2FEE6E873E62} = {D221D863-BEA1-4477-8525-9E091509766D}
+		{1A7397D1-CD28-4C48-956D-1057644E2FF7} = {D221D863-BEA1-4477-8525-9E091509766D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4744A932-8516-41ED-A9D1-2B15189E0215}
